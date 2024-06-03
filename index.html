@@ -3,90 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Wedding Website</title>
+    <title>Interactive Invitation</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f8f8f8;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 900px;
-            width: 100%;
-        }
-        .image-section {
-            flex: 1;
-            overflow: hidden;
-        }
-        .image-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .content-section {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: #f8f8f8;
-        }
-        .content-section h1 {
+            background-color: #f0f0f0;
             margin: 0;
-            font-size: 2.5rem;
-            color: #333;
         }
-        .content-section p {
-            margin: 20px 0;
-            font-size: 1.1rem;
-            color: #666;
-        }
-        .content-section button {
-            padding: 15px 20px;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #ff6b6b;
-            border: none;
-            border-radius: 4px;
+        .letter-container {
+            position: relative;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .content-section button:hover {
-            background-color: #ff4a4a;
+        .closed-letter, .open-letter {
+            width: 300px;
+            height: 200px;
+            transition: opacity 0.5s ease;
         }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .image-section, .content-section {
-                flex: unset;
-                width: 100%;
-            }
+        .open-letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-section">
-            <img src="https://assets.coingecko.com/coins/images/17711/standard/FB_Logo.png?1696517238" alt="Wedding Image">
-        </div>
-        <div class="content-section">
-            <h1>Your free wedding website awaits</h1>
-            <p>A beautiful website with customisable online RSVP, matching invitations and more!</p>
-            <button>Get Started For Free</button>
+    <div class="letter-container" onclick="openLetter()">
+        <img src="https://img3.stockfresh.com/files/a/ashumskiy/m/24/5564333_stock-photo-womans-hand-holding-closed-envelope.jpg" alt="Closed Letter" class="closed-letter">
+        <div class="open-letter">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_790106-MLB40602628144_012020-F.jpg" alt="Open Letter">
+            <div style="position: absolute; top: 50px; left: 50px; font-size: 24px; color: #000;">
+                CHATGPT is Amazing
+            </div>
         </div>
     </div>
+
+    <script>
+        function openLetter() {
+            document.querySelector('.closed-letter').style.opacity = '0';
+            document.querySelector('.open-letter').style.opacity = '1';
+        }
+    </script>
 </body>
 </html>
 
