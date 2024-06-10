@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Video</title>
+    <title>Centered Video with Border</title>
     <style>
         html, body {
-            margin: 20%;
-            padding: 5%;
+            margin: 0;
+            padding: 0;
             height: 100%;
             overflow: hidden;
         }
@@ -17,12 +17,9 @@
             align-items: center;
         }
         video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: calc(100vw - 40%);
+            height: calc(100vh - 40%);
+            object-fit: contain;
         }
     </style>
 </head>
